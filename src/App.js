@@ -5,7 +5,7 @@ import SetupForm from './SetupForm'
 import Loading from './Loading'
 import Modal from './Modal'
 function App() {
-  return <h2>quiz starter</h2>
+  return <h2>Setup Quiz</h2>
 }
 
 export default App
