@@ -5,14 +5,14 @@ import SetupForm from './SetupForm'
 import Loading from './Loading'
 import Modal from './Modal'
 function App() {
-  const { questions, waiting, loading, index, correct } = useGlobalContext();
+  const { questions, waiting, loading, index, correct, incrementIndex } = useGlobalContext();
   if (waiting) {
     return <SetupForm />;
   }
   if (loading) {
     return <Loading />;
   }
-  
+
   const { question, incorrect_answers, correct_answer } = questions[index];
   const answers = [...incorrect_answers, correct_answer];
   
@@ -37,7 +37,7 @@ function App() {
             })}
           </div>
         </article>
-        <button className="next-question">next question</button>
+        <button className="next-question" onClick={incrementIndex}>next question</button>
       </section>
     </main>
   );

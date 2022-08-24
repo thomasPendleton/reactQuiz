@@ -61,6 +61,19 @@ const AppProvider = ({ children }) => {
     };
   }, []);
 
+  const incrementIndex = () => {
+    setIndex((prev) => {
+      const newIndex = prev + 1;
+      if (newIndex > questions.length - 1) {
+        // open modal()
+
+        return 0;
+      } else {
+        return newIndex;
+      }
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -71,6 +84,7 @@ const AppProvider = ({ children }) => {
         correct,
         error,
         isModalOpen,
+        incrementIndex,
       }}
     >
       {children}
